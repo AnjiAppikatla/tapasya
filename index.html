@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./index.css">
+<title>Sri Sai Tapasya</title>
+<script>
+ $(function(){
+  const items = ['img-1','img-2','img-3','img-4','img-5','img-6','img-7','img-8','img-9','img-10','img-11','img-12','img-13','img-14','img-15','img-16','img-17','img-18','img-19','img-20','img-21','img-22','img-23','img-24','img-25','img-26','img-27','img-28','img-29','img-30','img-31','img-32','img-33','img-34','img-35','img-36','img-37','img-38','img-39','img-40','img-41','img-42','img-43','img-44','img-45','img-46','img-47','img-48','img-49','img-50','img-51','img-52','img-53','img-54','img-55','img-56','img-57','img-58','img-59','img-60','img-61','img-62','img-63','img-64','img-65','img-66','img-67','img-68','img-69','img-70','img-71','img-72','img-73','img-74','img-75','img-76','img-77','img-78','img-79','img-80','img-81','img-82','img-83','img-84','img-85','img-86','img-89','img-90','img-91','img-92','img-93','img-94','img-95','img-96','img-97','img-98','img-99','img-100','img-101','img-102']
+
+  const itemsPerPage = 6;
+
+// Function to display items for a specific page
+function displayItemsForPage(page) {
+    const galleryList = document.getElementById('gallery-list');
+    galleryList.innerHTML = ''; // Clear previous content
+
+    // Calculate start and end index for the current page
+    const startIndex = (page - 1) * itemsPerPage;
+    const endIndex = Math.min(startIndex + itemsPerPage, items.length);
+
+    // Display items for the current page
+    for (let i = startIndex; i < endIndex; i++) {
+        const div = document.createElement('div');
+        div.className = 'col-md-4 mb-4';
+        div.innerHTML = `<div class="img-list"><img src="./images/${items[i]}.jpeg" alt="" /></div>`;
+        galleryList.appendChild(div);
+    }
+
+    // Display pagination controls
+    displayPaginationControls(page);
+}
+
+// Function to display pagination controls
+function displayPaginationControls(currentPage) {
+    const pagination = document.getElementById('pagination');
+    pagination.innerHTML = ''; // Clear previous content
+
+    // Calculate total number of pages
+    const totalPages = Math.ceil(items.length / itemsPerPage);
+
+    // Create pagination links
+    for (let i = 1; i <= totalPages; i++) {
+        const link = document.createElement('a');
+        link.href = '';
+        link.textContent = i;
+        if (i === currentPage) {
+            link.classList.add('active');
+        }
+        link.addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default behavior
+    displayItemsForPage(i);
+});
+        pagination.appendChild(link);
+    }
+}
+
+// Initial display of items for the first page
+displayItemsForPage(1);
+
+
+ })
+</script>
+  </head>
+  <body>
+    <div class="container-fluid" id="main">
+      <div class="row p-2">
+        <div class="col-md-6 d-flex align-items-center">
+          <h1> <span><img src="./download/vector-yoga-icon-removebg-preview.png" width="35" class="mr-3" alt=""></span>Sri Sai Tapasya</h1>
+        </div>
+        <div class="col-md-6 d-flex justify-content-evenly align-items-center">
+          <div class="main-nav">
+            <ul>
+              <li><a href="#main">Home</a></li>
+              <li><a href="#about-div">About</a></li>
+              <li><a href="#gallery-list">Gallery</a></li>
+              <li>Age Group</li>
+              <li><a href="#contact-us">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sliding mt-5">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="images\img-1.jpeg" alt="First slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="images\img-2.jpeg" alt="Second slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="images\img-3.jpeg" alt="Third slide">
+              </div>
+            </div>
+          </div>          
+    </div>
+
+    <div class="why-div">
+      <h1 class="text-center my-5">Why Sai Tapasya</h1>
+
+     <div class="container-fluid">
+      <div class="row p-5 bg-info">
+        <div class="col-md-6 Expert-teachers why-divs"></div>
+        <div class="col-md-6">
+          <h3 class="text-center">Expert Teachers</h3>
+          <p class="content-para">Expert teachers are symbolized by a variety of icons, such as a graduation cap signifying their academic prowess, a magnifying glass denoting their attention to detail and analytical skills, a globe representing their global perspective and cultural awareness, a lightbulb symbolizing their creativity and ability to inspire, and a book illustrating their commitment to continuous learning and staying updated with the latest educational practices. These icons collectively encapsulate the qualities of expert teachers, highlighting their knowledge, skills, and dedication to providing exceptional education to their students.</p>
+        </div>
+      </div>
+      <div class="row p-5">
+        <div class="col-md-6">
+          <h3 class="text-center">Quality Education</h3>
+          <p class="content-para">Quality education encompasses various aspects, including skilled teachers, comprehensive curriculum, modern resources, and a supportive learning environment. Skilled teachers with expertise in their subjects and a passion for teaching are essential, as they inspire and guide students to reach their full potential. A comprehensive curriculum tailored to meet academic standards and promote critical thinking, creativity, and problem-solving is vital for fostering well-rounded individuals. Access to modern resources, such as technology and updated teaching materials, enhances learning experiences and keeps students engaged. Additionally, a supportive learning environment that values diversity, encourages collaboration, and prioritizes student well-being contributes to a positive educational journey. Together, these elements create a foundation for quality education that prepares students for success in a rapidly changing world.</p>
+        </div>
+        
+        <div class="col-md-6 quality-education why-divs"></div>
+      </div>
+      <div class="row p-5 bg-info">
+        <div class="col-md-6 why-divs special-activities"></div>
+        <div class="col-md-6">
+          <h3 class="text-center">Special Activities</h3>
+          <p class="content-para">Special activities play a crucial role in enriching the educational experience and fostering holistic development among students. At our school, we offer a diverse range of special activities designed to complement academic learning and provide students with opportunities for exploration, creativity, and personal growth. These activities include sports competitions, arts and crafts workshops, music and drama performances, STEM challenges, cultural celebrations, community service projects, and educational field trips. Through participation in these special activities, students develop teamwork and leadership skills, cultivate their talents and interests, build confidence, and gain valuable real-world experiences. Our commitment to providing a well-rounded education extends beyond the classroom, ensuring that every student has the opportunity to thrive academically, socially, and emotionally.</p>
+        </div>
+      </div>
+     </div>
+
+    </div>
+
+    <div class="about-div p-5" id="about-div">
+
+        <h1 class="text-center">About Sri Sai Tapasya</h1>
+
+        <p class="about-para mt-5">Welcome to Sri Sai Tapasya Primary and Daycare School, where we provide exceptional care and education for children from infancy through their primary years. Our daycare services offer a safe, stimulating, and nurturing environment with qualified caregivers, engaging activities, and nutritious meals. Meanwhile, our primary education program lays the foundation for lifelong learning with a comprehensive curriculum, dedicated educators, and a focus on holistic development. We prioritize safety, inclusivity, and collaboration between school and home, ensuring that every child feels valued, supported, and empowered to reach their full potential. Join our vibrant community at Sri Sai Tapasya, where we inspire a lifelong love of learning and nurture the leaders of tomorrow.</p>
+     
+    </div>
+
+
+
+    <div class="approch-div p-5" style="background-color: aliceblue;">
+        <h1 class="text-center">Our Approach</h1>
+  
+        <div class="why-cards mt-5">
+         <div class="container-fluid">
+          <div class="row">
+           <div class="col-md-4">
+              <div class="my-card">
+                <h4 class="text-center">Holistic Education</h4>
+                <div class="text-center">
+                  <img src="./download/holystic.png" width="70px" alt="">
+                </div>
+                <p>We recognize the importance of holistic education, which encompasses not only academic excellence but also the development of critical thinking skills, creativity, emotional intelligence, and character building.</p>
+              </div>
+           </div>
+           <div class="col-md-4">
+              <div class="my-card">
+                <h4 class="text-center">Child-Centered Learning</h4>
+                <div class="text-center">
+                  <img src="./download/centralized-learning.png" width="70px" alt="">
+                </div>
+                <p>Our curriculum is designed to be child-centered, promoting active learning experiences that engage and inspire students. We encourage curiosity, exploration, and hands-on learning to foster a deep understanding of concepts.</p>
+              </div>
+           </div>
+           <div class="col-md-4">
+              <div class="my-card">
+                <h4 class="text-center">Individualized Attention</h4>
+                <div class="text-center">
+                  <img src="./download/individual.png" width="70px" alt="">
+                </div>
+                <p>We understand that each child learns at their own pace and in their own unique way. Our small class sizes allow our dedicated teachers to provide personalized attention, catering to the individual needs and learning styles of each student.</p>
+              </div>
+           </div>
+          </div>
+         </div>
+        </div>
+  
+      </div>
+
+    <div class="gallery-div">
+      <div class="container-fluid mb-5">
+        <h2 class="text-center bold my-5">Our Gallery</h2>
+        <div id="gallery-list" class="row"></div>
+        <div id="pagination" class="container text-center"></div>
+      </div>
+    </div>
+
+    <div class="contact-us" id="contact-us">
+      <div class="container-fluid bg-dark text-white py-5">
+        <div class="row">
+          <div class="col-md-5">
+            <h3 class="text-primary">Address :</h3>
+            <p class="mb-1">Near Huda park, </p>
+              <p class="mb-1">Scoops icecream parlor road, </p>
+              <p class="mb-1">Subodaya colony, </p>
+              <p class="mb-1">Kukatpally, Hyderabad 500072. </p>
+           
+          </div>
+          <div class="col-md-7">
+            <h2 class="">Contact Us</h2>
+            <div class="row">
+              <div class="col-md-3">
+                <input type="text" class="form-control form-control-sm px-1" placeholder=" Name">
+              </div>
+              <div class="col-md-3">
+                <input type="text" class="form-control form-control-sm px-1" placeholder=" Mobile">
+              </div>
+              <div class="col-md-6">
+                <input type="text" class="form-control form-control-sm px-1" placeholder=" email">
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col-md-12">
+                <textarea class="form-control form-control-sm px-1" placeholder=" Message" rows="8"></textarea>
+              </div>
+            </div>
+            <div class="mt-5">
+              <button class="btn btn-primary more-btn">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+
+  </body>
+</html>
